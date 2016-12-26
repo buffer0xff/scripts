@@ -25,4 +25,4 @@ cat /root/.mysql_history > root_mysql_history.txt
 cat /var/lib/mysql/mysql/user.MYD > mysql_user_MYD.txt
 
 # Package
-tar --remove-files  -zcvf evidence.tar.gz *.txt
+tar --remove-files  -zcvf `hostname`.tar.gz *.txt
