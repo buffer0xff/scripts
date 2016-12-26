@@ -1,6 +1,7 @@
 #! /bin/bash
 
 # Basic
+hostname > hostname.txt
 id > id.txt
 ifconfig > ifconfig.txt
 
