@@ -1,5 +1,5 @@
-# scripts
-Some scripts
+# jut-l-tiz
+Some Useful Utilities
 
 # chproxy.sh Usage
 **If you have more than one sslocal configure files. chproxy.sh can help you switch your shadowsocks to different configure file quickly.**
