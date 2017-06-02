@@ -1,0 +1,18 @@
+#! /bin/bash
+
+config_directory=/etc/shadowsocks
+
+pids=`ps -ef | grep sslocal | sed 's/ \+/ /g' | cut -d" " -f 2`
+echo 'Killing socks ...'
+for pid in ${pids}; do
+    sudo kill -9 $pid;
+done
+echo 'All socks killed !'
+
+port=1080
+for file_name in ${config_directory}/*; do
+    sudo sslocal -c $file_name -l $port --pid-file /var/run/shadowsocks${port}.pid -d start  
+    let port=$port+1
+done
+
+echo 'All socks started !'
