@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pids=`ps -ef | grep sslocal | sed 's/ \+/ /g' | cut -d" " -f 2`
+echo 'Killing socks ...'
+for pid in ${pids}; do
+    sudo kill -9 $pid;
+done
+echo 'All socks killed !'
