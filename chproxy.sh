@@ -14,8 +14,12 @@ echo '
 for file_name in ${config_directory}/*; do
     file_name_array[$i]=$file_name
     pure_name=`echo $file_name | cut -d "/" -f4 | cut -d "." -f1` 
-    if [ $pure_name == $current_proxy ]; then
-        echo "[$i] $pure_name        <-- current" 
+    if [ `echo $current_proxy|tr -d " "|wc -c` != 1  ]; then
+    	if [ $pure_name == $current_proxy ]; then
+    	    echo "[$i] $pure_name        <-- current" 
+    	else
+    	    echo [$i] $pure_name
+    	fi
     else
         echo [$i] $pure_name
     fi
@@ -28,3 +32,4 @@ echo -n "
 read index
 echo ${file_name_array[$index]}
 sudo sslocal -c ${file_name_array[$index]} -d restart
+
