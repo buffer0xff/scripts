@@ -2,7 +2,6 @@
 
 config_directory=/etc/shadowsocks
 file_name_array=()
-file_name_array=()
 
 current_proxy=`ps -ef | grep -io  '/etc/shadowsocks/.*.json' | grep -v '*' | cut -d"/" -f 4 | cut -d"." -f1`
 
